@@ -74,7 +74,9 @@ if uploaded_file is not None:
         'score': 0
     }
 
-    images_directory = f'/Users/jingyuan/Desktop/ScanTeak/Scanteak_Furniture_Detector_Matcher/scanteak_images/{option}'
+    current_directory = os.getcwd()
+    print(current_directory)
+    images_directory = f'{current_directory}/scanteak_images/{option}' 
     for filename in os.listdir(images_directory): #Goes through all of the images in that category
         image_path = os.path.join(images_directory, filename) #Image path of each image
         if filename.lower() == '.ds_store':
